@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINEトーク履歴占い - プライバシー完全保護</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>LINEトーク履歴占い</h1>
+        <p>あなたのスマホの中で、完結する安心占い。</p>
+    </header>
+
+    <main>
+        <section id="privacy">
+            <h2>究極のプライバシー保護</h2>
+            <ul>
+                <li><span class="highlight">データはサーバーに一切送信されません。</span></li>
+                <li>すべての処理はあなたのブラウザ（スマートフォン/PC）の中で完結します。</li>
+                <li>ブラウザを閉じれば、読み込んだデータは完全に消去されます。</li>
+            </ul>
+        </section>
+
+        <section id="how-to-use">
+            <h2>占い手順</h2>
+            <ol>
+                <li><span class="highlight">LINEトーク履歴をエクスポート:</span><br>占いたい相手とのトーク画面を開き、「メニュー」→「その他」→「トーク履歴を送信」からテキストファイル（.txt）をエクスポートします。</li>
+                <li><span class="highlight">ファイルをアップロード:</span><br>このサイトの「ファイルを選択」ボタンをタップし、エクスポートしたテキストファイルを選びます。</li>
+                <li><span class="highlight">カードを選ぶ:</span><br>解析が完了すると、裏向きのタロットカードが3枚表示されます。直感で1枚を選んでください。</li>
+                <li><span class="highlight">占い結果を見る:</span><br>選んだカードと、二人のトーク履歴から導き出された、あなただけのメッセージが表示されます。</li>
+            </ol>
+            <p class="note">※トーク履歴はあなたのブラウザ内で処理され、サーバーには一切送信されません。安心してご利用ください。</p>
+        </section>
+
+        <section id="uploader">
+            <h2>占いを始める</h2>
+            <p>LINEアプリからエクスポートしたトーク履歴の<br>テキストファイル（.txt）を選択してください。</p>
+            <div class="upload-area">
+                <input type="file" id="file-input" accept=".txt">
+                <label for="file-input">ファイルを選択</label>
+            </div>
+            <p id="file-name"></p>
+        </section>
+
+        <section id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>トーク履歴を解析中です...</p>
+        </section>
+
+        <section id="card-selection" class="hidden">
+            <h2>運命のカードを1枚選んでください</h2>
+            <div id="card-options-area">
+                <!-- カード選択肢がここに表示されます -->
+            </div>
+        </section>
+
+        <section id="results" class="hidden">
+            <h2>運命のタロットカード</h2>
+            <div id="tarot-result-area">
+                <!-- タロットカードの結果がここに表示されます -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 LINEトーク履歴占い</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
