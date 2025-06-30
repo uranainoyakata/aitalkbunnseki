@@ -1,0 +1,326 @@
+:root {
+    --primary-color: #DAA520; /* Goldenrod - アクセント、ボタン */
+    --secondary-color: #4A235A; /* Deep Purple - テキスト、濃い要素 */
+    --background-color: #2C003E; /* Darker Purple - 背景 */
+    --text-color: #F0E68C; /* Light Gold/Khaki - メインテキスト */
+    --white-color: #FFFFFF;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif JP', serif; /* 明朝体のようなフォント */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E"); /* Subtle pattern */
+}
+
+header {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    padding: 2.5rem 1rem;
+    text-align: center;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    font-family: 'Cinzel', serif; /* 装飾的なフォント */
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #E0E0E0;
+}
+
+main {
+    flex: 1;
+    padding: 2.5rem 1rem;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.08); /* 半透明の背景 */
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px); /* ぼかし効果 */
+}
+
+section h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+#how-to-use ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: step-counter;
+}
+
+#how-to-use li {
+    counter-increment: step-counter;
+    padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-radius: 8px;
+    position: relative;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    border-left: 4px solid var(--primary-color);
+}
+
+#how-to-use li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#how-to-use .note {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    color: #B0B0B0;
+    text-align: center;
+}
+
+#privacy ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#privacy li {
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.8rem;
+    border-left: 5px solid var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1.05rem;
+}
+
+.highlight {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.upload-area {
+    text-align: center;
+    padding: 2.5rem;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label[for="file-input"] {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1.2rem 2.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+label[for="file-input"]:hover {
+    background-color: #FFD700; /* Gold */
+    transform: translateY(-2px);
+}
+
+#file-name {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-style: italic;
+    color: #B0B0B0;
+}
+
+.hidden {
+    display: none;
+}
+
+#loading {
+    text-align: center;
+    color: var(--text-color);
+}
+
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    border-top: 8px solid var(--primary-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#card-selection h2 {
+    margin-bottom: 2rem;
+}
+
+#card-options-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card-option {
+    width: 110px;
+    height: 190px;
+    background-color: var(--secondary-color);
+    border: 5px solid var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/RWS_Tarot_Back.jpg/200px-RWS_Tarot_Back.jpg"); /* タロットカードの裏面画像 */
+    background-size: cover;
+    background-position: center;
+}
+
+.card-option:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+#final-card-container {
+    transform-style: preserve-3d;
+    text-align: center;
+}
+
+#tarot-card-image {
+    max-width: 220px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+    border: 5px solid var(--primary-color);
+}
+
+#tarot-card-name {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+#tarot-card-meaning {
+    font-size: 1.3rem;
+    color: #E0E0E0;
+    margin-bottom: 2rem;
+}
+
+#tarot-explanation {
+    font-size: 1.1rem;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+#tarot-explanation h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--secondary-color);
+    color: #B0B0B0;
+    margin-top: auto;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    main {
+        width: 95%;
+        padding: 1.5rem 0.5rem;
+    }
+    section {
+        padding: 1.5rem;
+    }
+    section h2 {
+        font-size: 1.8rem;
+    }
+    label[for="file-input"] {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+    .card-option {
+        width: 90px;
+        height: 155px;
+    }
+    #tarot-card-image {
+        max-width: 180px;
+    }
+    #tarot-card-name {
+        font-size: 2rem;
+    }
+    #tarot-card-meaning {
+        font-size: 1.1rem;
+    }
+    #tarot-explanation {
+        font-size: 1rem;
+    }
+}
